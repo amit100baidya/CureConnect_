@@ -1,0 +1,265 @@
+/* --- General Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f9fbfc;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* --- Navbar --- */
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffe600;
+}
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 123, 255, 0.8)),
+    url("../images/hero_health.jpg") center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #ffe600;
+  color: #222;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #fff;
+}
+
+/* --- Features Section --- */
+.features {
+  text-align: center;
+  padding: 80px 40px;
+  background-color: #fff;
+}
+
+.features h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 40px;
+}
+
+.feature-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.box {
+  background-color: #f2f8ff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+.box img {
+  width: 70px;
+  margin-bottom: 15px;
+}
+
+.box h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 25px 10px;
+  margin-top: 40px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 25px;
+  margin: 0 8px;
+  transition: 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+/* --- Predictor Page --- */
+.predictor {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.predictor-box {
+  margin: 40px auto;
+  max-width: 600px;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.predictor textarea {
+  width: 100%;
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.predictor button {
+  margin-top: 15px;
+}
+.social-icons {
+  display: flex;
+  gap: 10px; /* space between icons */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center; /* centers the icons */
+  gap: 10px; /* space between icons */
+  margin-top: 10px; /* optional spacing from above content */
+}
+
+.social-icons img {
+  width: 30px;   /* size of icons */
+  height: 30px;
+  object-fit: contain;
+  transition: transform 0.2s; /* optional hover effect */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* slightly enlarge on hover */
+}
+
+
+
+/* Chatbot Icon */
+#chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+#chatbot-icon:hover {
+  background-color: #0056b3;
+}
+
+/* Chatbot Box */
+#chatbot-box {
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  padding: 15px;
+  z-index: 9999;
+}
+
+#chatbot-box h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+#chatbot-box input,
+#chatbot-box textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#chatbot-box button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#chatbot-box button:hover {
+  background-color: #0056b3;
+}

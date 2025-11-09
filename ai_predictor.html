@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CureConnect | AI Disease Predictor</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("public_0tu5wapYW6tC67aeE"); // Your EmailJS Public Key
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">CureConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ai_predictor.html" class="active">AI Predictor</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Predictor Section -->
+  <section class="predictor">
+    <h2>AI-Powered Disease Prediction</h2>
+    <p>Enter your symptoms below (e.g., fever, cough, headache) and get an instant health insight.</p>
+
+    <div class="predictor-box">
+      <textarea id="symptoms" placeholder="Enter your symptoms here..." rows="4"></textarea>
+      <button id="predictBtn" class="btn">Predict Disease</button>
+      <div id="result"></div>
+    </div>
+  </section>
+
+  <!-- Chatbot Button -->
+  <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-box">
+    <h3>CureConnect Chatbot</h3>
+    <p>Tell us about your issue, and we’ll get back to you soon!</p>
+
+    <form id="chatbot-form">
+      <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+      <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+      <textarea id="problem" name="problem" placeholder="Describe your problem" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+
+    <p id="chatbot-response"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CureConnect | Powered by AI</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/predictor.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>
