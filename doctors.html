@@ -3,190 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CureConnect | Doctor Finder</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: #f8fafc;
-      color: #333;
-    }
-
-    header {
-      background: #0d6efd;
-      padding: 15px 0;
-      color: #fff;
-      text-align: center;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #d1e8ff;
-    }
-
-    .search-doc {
-      text-align: center;
-      margin: 50px 0 20px;
-    }
-
-    .search-doc h2 {
-      font-size: 28px;
-      color: #0d6efd;
-      margin-bottom: 20px;
-    }
-
-    .search-doc input {
-      width: 280px;
-      padding: 10px;
-      font-size: 16px;
-      border: 2px solid #0d6efd;
-      border-radius: 5px;
-      outline: none;
-    }
-
-    .search-doc button {
-      background: #0d6efd;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      margin-left: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .search-doc button:hover {
-      background: #084298;
-    }
-
-    #doctor-results {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .doctor-card {
-      background: #fff;
-      width: 250px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .doctor-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .doctor-card img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-
-    .doctor-card h3 {
-      font-size: 18px;
-      color: #0d6efd;
-      margin-bottom: 5px;
-    }
-
-    .doctor-card p {
-      font-size: 14px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .doctor-card button {
-      background: #0d6efd;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .doctor-card button:hover {
-      background: #084298;
-    }
-  </style>
+  <title>CureConnect | Find Doctors & Specialists</title>
+  <meta name="description" content="Find trusted doctors and healthcare specialists in your area. Connect with medical professionals for consultations." />
+  
+  <link rel="stylesheet" href="css/style.css" />
+   <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8C5GZZS56"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8C5GZZS56');
+  </script>
 </head>
 
 <body>
+  <!-- Navbar -->
   <header>
-    <h1>CureConnect – Doctor Finder</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="ai_predictor.html">AI Predictor</a>
-      <a href="doctors.html" class="active">Doctors</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-
+    <nav class="navbar">
+      <div class="logo">🏥 CureConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ai_predictor.html">AI Predictor</a></li>
+        <li><a href="doctors.html" class="active">Doctors</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
-  
-
+  <!-- Search Section -->
   <section class="search-doc">
-    <h2>Find a Doctor</h2>
-    <input type="text" id="speciality" placeholder="e.g., Cardiologist, Dermatologist" />
-    <button onclick="searchDoctor()">Search</button>
+    <h2>👨‍⚕️ Find Your Perfect Doctor</h2>
+    <input type="text" id="doctorSearch" placeholder="Search by name, specialty, or location...">
+    <button onclick="searchDoctor()">Search Doctors</button>
   </section>
 
-  <section id="doctor-results">
-    <div class="doctor-card">
-      <img src="images/doctor2.png" alt="Dr. A Sharma" />
-      <h3>Dr. A Sharma</h3>
-      <p>Cardiologist | Apollo Hospital, Delhi</p>
-      <button>Book Appointment</button>
-    </div>
+  <!-- Doctor Results -->
+  <div id="doctor-results"></div>
 
-    <div class="doctor-card">
-      <img src="images/doctor4.jpg" alt="Dr. Neha Kapoor" />
-      <h3>Dr. Neha Kapoor</h3>
-      <p>Dermatologist | Fortis Hospital, Mumbai</p>
-      <button>Book Appointment</button>
-    </div>
-  </section>
+  <!-- Chatbot Button -->
+  <div id="chatbot-icon" onclick="toggleChatbot()" title="Chat with us">💬</div>
 
+  <!-- Chatbot Window -->
+  <div id="chatbot-box">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>CureConnect Assistant</h3>
+      <button onclick="toggleChatbot()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-light);" title="Close">✕</button>
+    </div>
+    <p>Need help finding a doctor? We're here to assist!</p>
+
+    <form id="chatbot-form">
+      <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+      <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+      <textarea id="problem" name="problem" placeholder="Tell us what you're looking for..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="chatbot-response"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CureConnect | Connecting You With Healthcare Professionals</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank" title="LinkedIn">
+        <img src="images/link.png" alt="LinkedIn" />
+      </a>
+      <a href="#" title="Facebook"><img src="images/face.png" alt="Facebook" /></a>
+      <a href="#" title="Twitter"><img src="images/twit.png" alt="Twitter" /></a>
+      <a href="#" title="Instagram"><img src="images/insta.png" alt="Instagram" /></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/chatbot.js"></script>
   <script>
-    function searchDoctor() {
-      const spec = document.getElementById("speciality").value.toLowerCase();
-      const doctors = {
-        cardiologist:
-          '<div class="doctor-card"><img src="images/doctor2.png" alt="Dr. A Sharma"><h3>Dr. A Sharma</h3><p>Cardiologist | Apollo Hospital, Delhi</p><button>Book Appointment</button></div>',
-        dermatologist:
-          '<div class="doctor-card"><img src="images/doctor4.jpg" alt="Dr. Neha Kapoor"><h3>Dr. Neha Kapoor</h3><p>Dermatologist | Fortis Hospital, Mumbai</p><button>Book Appointment</button></div>',
-        neurologist:
-          '<div class="doctor-card"><img src="images/doctor1.png" alt="Dr. Raj Mehta"><h3>Dr. Raj Mehta</h3><p>Neurologist | AIIMS, Delhi</p><button>Book Appointment</button></div>',
-      };
-      const result = doctors[spec] || "<p>No doctors found. Try another specialty.</p>";
-      document.getElementById("doctor-results").innerHTML = result;
+    // Sample doctor data
+    const doctors = [
+      { id: 1, name: "Dr. Rajesh Kumar", specialty: "Cardiologist", experience: "15+ years", rating: 4.8, image: "images/doctor1.png" },
+      { id: 2, name: "Dr. Priya Singh", specialty: "Neurologist", experience: "12+ years", rating: 4.9, image: "images/doctor2.png" },
+      { id: 3, name: "Dr. Amit Patel", specialty: "Orthopedist", experience: "10+ years", rating: 4.7, image: "images/doctor3.jpg" },
+      { id: 4, name: "Dr. Neha Gupta", specialty: "Dermatologist", experience: "8+ years", rating: 4.6, image: "images/doctor4.jpg" },
+      { id: 5, name: "Dr. Vikram Shah", specialty: "Pediatrician", experience: "13+ years", rating: 4.9, image: "images/download.jpg" },
+      { id: 6, name: "Dr. Anjali Mishra", specialty: "Gynecologist", experience: "11+ years", rating: 4.8, image: "images/doctor5.jpg" }
+    ];
+
+    function displayDoctors(docsToShow) {
+      const resultsDiv = document.getElementById("doctor-results");
+      resultsDiv.innerHTML = "";
+      
+      docsToShow.forEach(doc => {
+        const docCard = document.createElement("div");
+        docCard.className = "doctor-card";
+        docCard.innerHTML = `
+          <img src="${doc.image}" alt="${doc.name}">
+          <h3>${doc.name}</h3>
+          <p><strong>${doc.specialty}</strong></p>
+          <p>${doc.experience}</p>
+          <p>⭐ ${doc.rating}/5.0</p>
+          <button onclick="alert('Booking feature coming soon!')">Book Consultation</button>
+        `;
+        resultsDiv.appendChild(docCard);
+      });
     }
+
+    function searchDoctor() {
+      const searchValue = document.getElementById("doctorSearch").value.toLowerCase();
+      const filtered = doctors.filter(doc =>
+        doc.name.toLowerCase().includes(searchValue) ||
+        doc.specialty.toLowerCase().includes(searchValue)
+      );
+      displayDoctors(filtered.length > 0 ? filtered : doctors);
+    }
+
+    // Display all doctors on page load
+    window.addEventListener("load", () => displayDoctors(doctors));
   </script>
 </body>
 </html>
