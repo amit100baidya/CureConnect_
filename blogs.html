@@ -3,190 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CureConnect | Health Blogs</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: #f8fafc;
-      color: #333;
-    }
-
-    header {
-      background: #0d6efd;
-      padding: 15px 0;
-      color: #fff;
-      text-align: center;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #d1e8ff;
-    }
-
-    .search-blog {
-      text-align: center;
-      margin: 40px 0 20px;
-    }
-
-    .search-blog input {
-      width: 300px;
-      padding: 10px;
-      border: 2px solid #0d6efd;
-      border-radius: 5px;
-      outline: none;
-      font-size: 16px;
-    }
-
-    .search-blog button {
-      background: #0d6efd;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      margin-left: 10px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .search-blog button:hover {
-      background: #084298;
-    }
-
-    #blog-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-      padding: 20px;
-    }
-
-    .blog-card {
-      background: #fff;
-      width: 320px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .blog-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .blog-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .blog-content {
-      padding: 15px;
-    }
-
-    .blog-content h3 {
-      color: #0d6efd;
-      margin-bottom: 10px;
-      font-size: 18px;
-    }
-
-    .blog-content p {
-      font-size: 14px;
-      color: #555;
-      line-height: 1.5;
-      margin-bottom: 10px;
-    }
-
-    .read-more {
-      display: inline-block;
-      color: #0d6efd;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    .read-more:hover {
-      color: #084298;
-      text-decoration: underline;
-    }
-  </style>
+  <title>CureConnect | Health Blogs & Articles</title>
+  <meta name="description" content="Read verified health blogs, wellness articles, and medical insights from healthcare professionals." />
+   <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8C5GZZS56"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8C5GZZS56');
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <!-- Navbar -->
   <header>
-    <h1>CureConnect – Health Blogs</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="ai_predictor.html">AI Predictor</a>
-      <a href="doctors.html">Doctors</a>
-      <a href="blogs.html" class="active">Blogs</a>
-      <a href="contact.html">Contact</a>
-      <a href="about.html">About</a>
-      
+    <nav class="navbar">
+      <div class="logo">🏥 CureConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ai_predictor.html">AI Predictor</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="blogs.html" class="active">Blogs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- Search Section -->
   <section class="search-blog">
-    <input type="text" id="blogSearch" placeholder="Search blogs...">
-    <button onclick="searchBlog()">Search</button>
+    <h2>📚 Health & Wellness Blogs</h2>
+    <input type="text" id="blogSearch" placeholder="Search health topics...">
+    <button onclick="searchBlog()">Search Blogs</button>
   </section>
 
-  <section id="blog-list">
-    <div class="blog-card">
-      <img src="images/blog1.jpg" alt="Healthy Living">
-      <div class="blog-content">
-        <h3>5 Habits for a Healthier Lifestyle</h3>
-        <p>Discover simple daily habits that can improve your overall health and keep diseases away.</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-    </div>
+  <!-- Blog List -->
+  <div id="blog-list"></div>
 
-    <div class="blog-card">
-      <img src="images/blog2.jpg" alt="Mental Health">
-      <div class="blog-content">
-        <h3>Mental Health Matters: Breaking the Stigma</h3>
-        <p>Learn how mental well-being affects physical health and ways to maintain a balanced life.</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-    </div>
+  <!-- Chatbot Button -->
+  <div id="chatbot-icon" onclick="toggleChatbot()" title="Chat with us">💬</div>
 
-    <div class="blog-card">
-      <img src="images/nutrition.jpg" alt="Nutrition Tips">
-      <div class="blog-content">
-        <h3>Nutrition Tips for a Strong Immune System</h3>
-        <p>Boost your immunity naturally with these scientifically proven nutrition strategies.</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
+  <!-- Chatbot Window -->
+  <div id="chatbot-box">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>CureConnect Assistant</h3>
+      <button onclick="toggleChatbot()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-light);" title="Close">✕</button>
     </div>
-  </section>
+    <p>Looking for health information? Ask us anything!</p>
 
+    <form id="chatbot-form">
+      <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+      <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+      <textarea id="problem" name="problem" placeholder="What would you like to know?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="chatbot-response"></p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 CureConnect | Your Daily Dose of Health Wisdom</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank" title="LinkedIn">
+        <img src="images/link.png" alt="LinkedIn" />
+      </a>
+      <a href="#" title="Facebook"><img src="images/face.png" alt="Facebook" /></a>
+      <a href="#" title="Twitter"><img src="images/twit.png" alt="Twitter" /></a>
+      <a href="#" title="Instagram"><img src="images/insta.png" alt="Instagram" /></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/chatbot.js"></script>
   <script>
-    function searchBlog() {
-      const query = document.getElementById("blogSearch").value.toLowerCase();
-      const blogs = document.querySelectorAll(".blog-card");
-      blogs.forEach(blog => {
-        const title = blog.querySelector("h3").textContent.toLowerCase();
-        blog.style.display = title.includes(query) ? "block" : "none";
+    // Sample blog data
+    const blogs = [
+      { id: 1, title: "10 Tips for Better Sleep Quality", category: "Sleep", excerpt: "Discover science-backed tips to improve your sleep quality and wake up refreshed.", image: "images/sleep.jpg" },
+      { id: 2, title: "Benefits of Regular Exercise", category: "Fitness", excerpt: "Learn how regular physical activity can transform your health and well-being.", image: "images/blog1.jpg" },
+      { id: 3, title: "Healthy Eating Habits for Busy People", category: "Nutrition", excerpt: "Simple nutrition tips for maintaining a healthy diet with a hectic schedule.", image: "images/nutrition.jpg" },
+      { id: 4, title: "Stress Management Techniques", category: "Mental Health", excerpt: "Explore effective techniques to manage stress and improve mental wellness.", image: "images/stress.jpg" },
+      { id: 5, title: "Prevention is Better Than Cure", category: "Prevention", excerpt: "Understand the importance of preventive healthcare and screening tests.", image: "images/prevention.jpg" },
+      { id: 6, title: "Understanding Heart Health", category: "Health", excerpt: "A comprehensive guide to maintaining cardiovascular health and preventing heart diseases.", image: "images/heart.jpg" }
+    ];
+
+    function displayBlogs(blogsToShow) {
+      const blogList = document.getElementById("blog-list");
+      blogList.innerHTML = "";
+      
+      blogsToShow.forEach(blog => {
+        const blogCard = document.createElement("div");
+        blogCard.className = "blog-card";
+        blogCard.innerHTML = `
+          <img src="${blog.image}" alt="${blog.title}">
+          <div class="blog-content">
+            <span style="color: var(--accent); font-weight: 700; font-size: 0.85rem;">${blog.category}</span>
+            <h3>${blog.title}</h3>
+            <p>${blog.excerpt}</p>
+            <a href="#" class="read-more">Read Article</a>
+          </div>
+        `;
+        blogList.appendChild(blogCard);
       });
     }
+
+    function searchBlog() {
+      const searchValue = document.getElementById("blogSearch").value.toLowerCase();
+      const filtered = blogs.filter(blog =>
+        blog.title.toLowerCase().includes(searchValue) ||
+        blog.category.toLowerCase().includes(searchValue) ||
+        blog.excerpt.toLowerCase().includes(searchValue)
+      );
+      displayBlogs(filtered.length > 0 ? filtered : blogs);
+    }
+
+    // Display all blogs on page load
+    window.addEventListener("load", () => displayBlogs(blogs));
   </script>
 </body>
 </html>
