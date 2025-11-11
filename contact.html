@@ -3,171 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CureConnect | Contact Us</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: #f8fafc;
-      color: #333;
-    }
-
-    header {
-      background: #0d6efd;
-      padding: 15px 0;
-      color: #fff;
-      text-align: center;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-top: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #d1e8ff;
-    }
-
-    .contact-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .contact-section h2 {
-      color: #0d6efd;
-      margin-bottom: 15px;
-      font-size: 28px;
-    }
-
-    .contact-section p {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .contact-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .contact-form, .contact-info {
-      background: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 350px;
-    }
-
-    .contact-form h3, .contact-info h3 {
-      color: #0d6efd;
-      margin-bottom: 15px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      outline: none;
-      font-size: 14px;
-    }
-
-    button {
-      background: #0d6efd;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #084298;
-    }
-
-    iframe {
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      height: 250px;
-      margin-top: 10px;
-    }
-
-    footer {
-      background: #0d6efd;
-      color: white;
-      text-align: center;
-      padding: 15px 0;
-      margin-top: 40px;
-    }
-  </style>
+  <title>CureConnect | Contact Us - Get in Touch</title>
+  <meta name="description" content="Have questions? Contact CureConnect for inquiries, feedback, or partnerships." />
+  
+  <link rel="stylesheet" href="css/style.css" />
+   <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8C5GZZS56"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8C5GZZS56');
+  </script>
 </head>
 
 <body>
+  <!-- Navbar -->
   <header>
-    <h1>CureConnect – Contact Us</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="ai_predictor.html">AI Predictor</a>
-      <a href="doctors.html">Doctors</a>
-      <a href="blogs.html">Blogs</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="about.html">About</a>
+    <nav class="navbar">
+      <div class="logo">🏥 CureConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ai_predictor.html">AI Predictor</a></li>
+        <li><a href="doctors.html">Doctors</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- Contact Section -->
   <section class="contact-section">
-    <h2>Get in Touch</h2>
-    <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
+    <h2>📞 Get in Touch With Us</h2>
+    <p>Have questions, suggestions, feedback, or partnership inquiries? We'd love to hear from you! Fill out the form below and we'll respond as soon as possible.</p>
 
     <div class="contact-container">
-
       <!-- Contact Form -->
       <div class="contact-form">
-        <h3>Send us a message</h3>
+        <h3>Send us a Message</h3>
         <form>
-          <input type="text" placeholder="Your Name" required>
-          <input type="email" placeholder="Your Email" required>
-          <textarea rows="5" placeholder="Your Message" required></textarea>
-          <button type="submit">Submit</button>
+          <input type="text" placeholder="Your Full Name" required>
+          <input type="email" placeholder="Your Email Address" required>
+          <input type="tel" placeholder="Your Phone Number">
+          <textarea rows="6" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
       </div>
 
-      <!-- Contact Info -->
+      <!-- Contact Information -->
       <div class="contact-info">
-        <h3>Contact Information</h3>
-        <p><b>Email:</b> <span style="color:#0d6efd;">amitbaidya18082005@gmail.com</span></p> <!-- 🔹 ADD YOUR EMAIL HERE -->
-        <p><b>Phone:</b> <span style="color:#0d6efd;">+91 79861 02850</span></p> <!-- 🔹 ADD YOUR PHONE NUMBER -->
-        <p><b>Address:</b> <span style="color:#0d6efd;">Lovely Professional University / Jalandar, India</span></p> <!-- 🔹 ADD YOUR ADDRESS -->
-
-        <h3 style="margin-top:20px;">Find Us</h3>
-        <!-- 🔹 REPLACE THE MAP SRC BELOW WITH YOUR LOCATION LINK (from Google Maps > Share > Embed map > Copy HTML link) -->
-        <iframe src="https://maps.app.goo.gl/ndzknPLTrnNJJoDD7?g_st=aw"></iframe>
+        <h3>📍 Contact Information</h3>
+        <p><strong>Email:</strong> info@cureconnect.com</p>
+        <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+        <p><strong>Business Hours:</strong> Monday - Friday, 9 AM - 6 PM</p>
+        <p><strong>Address:</strong> 123 Health Street, Medical City, MC 12345</p>
+        
+        <div style="margin-top: 25px;">
+          <h4 style="color: var(--primary); margin-bottom: 15px;">Follow Us on Social Media</h4>
+          <div class="social-icons" style="gap: 12px; margin-bottom: 20px;">
+            <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank" title="LinkedIn" style="width: 40px; height: 40px;">
+              <img src="images/link.png" alt="LinkedIn" />
+            </a>
+            <a href="#" title="Facebook" style="width: 40px; height: 40px;"><img src="images/face.png" alt="Facebook" /></a>
+            <a href="#" title="Twitter" style="width: 40px; height: 40px;"><img src="images/twit.png" alt="Twitter" /></a>
+            <a href="#" title="Instagram" style="width: 40px; height: 40px;"><img src="images/insta.png" alt="Instagram" /></a>
+          </div>
+        </div>
       </div>
-
     </div>
   </section>
 
+  <!-- Chatbot Button -->
+  <div id="chatbot-icon" onclick="toggleChatbot()" title="Chat with us">💬</div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-box">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>CureConnect Support</h3>
+      <button onclick="toggleChatbot()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-light);" title="Close">✕</button>
+    </div>
+    <p>Need immediate assistance? Chat with our support team!</p>
+
+    <form id="chatbot-form">
+      <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+      <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+      <textarea id="problem" name="problem" placeholder="How can we help?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="chatbot-response"></p>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 CureConnect | Designed & Developed by <b>Amit Baidya</b></p> <!-- 🔹 ADD YOUR NAME HERE -->
+    <p>© 2025 CureConnect | We're Here to Help You Stay Healthy</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank" title="LinkedIn">
+        <img src="images/link.png" alt="LinkedIn" />
+      </a>
+      <a href="#" title="Facebook"><img src="images/face.png" alt="Facebook" /></a>
+      <a href="#" title="Twitter"><img src="images/twit.png" alt="Twitter" /></a>
+      <a href="#" title="Instagram"><img src="images/insta.png" alt="Instagram" /></a>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="js/chatbot.js"></script>
 </body>
 </html>
