@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CureConnect | AI-Powered Disease Prediction & Awareness</title>
+  <title>CureConnect | AI-Powered Disease Prediction & Health Awareness</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description" content="CureConnect helps users predict diseases using AI and promotes health awareness through blogs and doctor recommendations." />
-  <meta name="keywords" content="CureConnect, disease prediction, AI health, medical diagnosis, Practo, PharmEasy, health awareness" />
-  <meta name="author" content="Your Name" />
+  <meta name="description" content="CureConnect helps users predict diseases using AI, find trusted doctors, and promotes health awareness through expert blogs." />
+  <meta name="keywords" content="CureConnect, disease prediction, AI health, medical diagnosis, doctors, health awareness" />
+  <meta name="author" content="CureConnect Team" />
 
   <!-- Favicon -->
   <link rel="icon" href="images/logo.png" type="image/png" />
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
    <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8C5GZZS56"></script>
   <script>
@@ -22,27 +24,20 @@
     gtag('config', 'G-S8C5GZZS56');
   </script>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-
-
-  <!-- email -->
- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("0tu5wapYW6tC67aeE");
-  })();
-</script>
-
-  
+  <!-- EmailJS -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("0tu5wapYW6tC67aeE");
+    })();
+  </script>
 </head>
-
 
 <body>
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <div class="logo">CureConnect</div>
+      <div class="logo">🏥 CureConnect</div>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="ai_predictor.html">AI Predictor</a></li>
@@ -56,73 +51,70 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <img src="images/hero.png" alt="Healthcare Banner" class="hero-img">
     <div class="hero-content">
-      <h1>AI-Powered Disease Prediction & Health Awareness</h1>
-      <p>Predict possible diseases from your symptoms and access trusted health insights — all in one place.</p>
-      <a href="ai_predictor.html" class="btn">Check Your Symptoms</a>
+      <h1>🏥 AI-Powered Disease Prediction & Health Awareness</h1>
+      <p>Predict possible diseases from your symptoms, connect with trusted doctors, and access expert health insights — all in one intelligent platform.</p>
+      <a href="ai_predictor.html" class="btn">🚀 Start Symptom Analysis</a>
     </div>
   </section>
 
   <!-- Features Section -->
   <section class="features">
-    <h2>Our Features</h2>
+    <h2>✨ Why Choose CureConnect?</h2>
     <div class="feature-boxes">
       <div class="box">
         <img src="images/blog3.png" alt="AI Health" />
-        <h3>AI Disease Predictor</h3>
-        <p>Enter your symptoms and let our AI suggest possible conditions instantly.</p>
+        <h3>🤖 AI Disease Prediction</h3>
+        <p>Enter your symptoms and let our advanced artificial intelligence analyze them to suggest possible conditions instantly with accuracy.</p>
       </div>
       <div class="box">
         <img src="images/doctor1.png" alt="Doctors" />
-        <h3>Doctor Recommendations</h3>
-        <p>Find trusted doctors and specialists for your needs.</p>
+        <h3>👨‍⚕️ Find Expert Doctors</h3>
+        <p>Discover and connect with trusted healthcare professionals and specialists verified for their qualifications and patient reviews.</p>
       </div>
       <div class="box">
         <img src="images/blog1.jpg" alt="Blogs" />
-        <h3>Health Awareness Blogs</h3>
-        <p>Stay informed with verified articles on prevention, fitness, and nutrition.</p>
+        <h3>📚 Expert Health Blogs</h3>
+        <p>Stay informed with verified articles on prevention, fitness, nutrition, and wellness written by medical professionals.</p>
       </div>
     </div>
   </section>
 
+  <!-- Chatbot Button -->
+  <div id="chatbot-icon" onclick="toggleChatbot()" title="Chat with us">💬</div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-box">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>CureConnect Assistant</h3>
+      <button onclick="toggleChatbot()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-light);" title="Close">✕</button>
+    </div>
+    <p>Hello! How can we help you today?</p>
+    
+    <form id="chatbot-form">
+      <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
+      <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
+      <textarea id="problem" name="problem" placeholder="Your question or message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p id="chatbot-response"></p>
+  </div>
+
   <!-- Footer -->
   <footer>
-    <p>© 2025 CureConnect | Inspired by Practo & PharmEasy</p>
+    <p>© 2025 CureConnect | Empowering Health Through Technology & AI</p>
     <div class="social-icons">
-  <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank">
-    <img src="images/link.png" alt="LinkedIn" />
-  </a>
-  <a href="#"><img src="images/face.png" alt="Facebook" /></a>
-  <a href="#"><img src="images/twit.png" alt="Twitter" /></a>
-  <a href="#"><img src="images/insta.png" alt="Instagram" /></a>
-</div>
-
+      <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank" title="LinkedIn">
+        <img src="images/link.png" alt="LinkedIn" />
+      </a>
+      <a href="#" title="Facebook"><img src="images/face.png" alt="Facebook" /></a>
+      <a href="#" title="Twitter"><img src="images/twit.png" alt="Twitter" /></a>
+      <a href="#" title="Instagram"><img src="images/insta.png" alt="Instagram" /></a>
+    </div>
   </footer>
-  <!-- Chatbot Button -->
-<div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
-
-<!-- Chatbot Window -->
-<div id="chatbot-box">
-  <h3>CureConnect Chatbot</h3>
-  <p>Tell us about your issue, and we’ll get back to you soon!</p>
-  
-  <form id="chatbot-form">
-    <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
-    <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
-    <textarea id="problem" name="problem" placeholder="Describe your problem" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-
-  <p id="chatbot-response"></p>
-</div>
-
-
 
   <!-- JS -->
-  <script src="js/script.js"></script>
   <script src="js/chatbot.js"></script>
-
 </body>
 </html>
-
