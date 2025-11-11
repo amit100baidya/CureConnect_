@@ -3,24 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CureConnect | AI Disease Predictor</title>
-
+  <title>CureConnect | AI Disease Predictor - Symptom Analyzer</title>
+  <meta name="description" content="Use our advanced AI-powered disease predictor to analyze symptoms and get instant health insights." />
+  
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- EmailJS -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("public_0tu5wapYW6tC67aeE"); // Your EmailJS Public Key
+      emailjs.init("public_0tu5wapYW6tC67aeE");
     })();
   </script>
 </head>
+ <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8C5GZZS56"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8C5GZZS56');
+  </script>
 
 <body>
   <!-- Navbar -->
   <header>
     <nav class="navbar">
-      <div class="logo">CureConnect</div>
+      <div class="logo">🏥 CureConnect</div>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="ai_predictor.html" class="active">AI Predictor</a></li>
@@ -34,29 +43,32 @@
 
   <!-- Predictor Section -->
   <section class="predictor">
-    <h2>AI-Powered Disease Prediction</h2>
-    <p>Enter your symptoms below (e.g., fever, cough, headache) and get an instant health insight.</p>
+    <h2>🤖 AI-Powered Disease Prediction</h2>
+    <p>Enter your symptoms below and let our advanced AI analyze them to provide instant health insights. <strong>Remember:</strong> This is for informational purposes only and is not a substitute for professional medical advice.</p>
 
     <div class="predictor-box">
-      <textarea id="symptoms" placeholder="Enter your symptoms here..." rows="4"></textarea>
-      <button id="predictBtn" class="btn">Predict Disease</button>
+      <textarea id="symptoms" placeholder="Enter your symptoms here... (e.g., fever, cough, headache, fatigue)" rows="5"></textarea>
+      <button id="predictBtn" class="btn">🔍 Analyze Symptoms</button>
       <div id="result"></div>
     </div>
   </section>
 
   <!-- Chatbot Button -->
-  <div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+  <div id="chatbot-icon" onclick="toggleChatbot()" title="Chat with us">💬</div>
 
   <!-- Chatbot Window -->
   <div id="chatbot-box">
-    <h3>CureConnect Chatbot</h3>
-    <p>Tell us about your issue, and we’ll get back to you soon!</p>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3>CureConnect Assistant</h3>
+      <button onclick="toggleChatbot()" style="background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--text-light);" title="Close">✕</button>
+    </div>
+    <p>Questions about symptoms or our AI predictor? We're here to help!</p>
 
     <form id="chatbot-form">
       <input type="text" id="from_name" name="from_name" placeholder="Your Name" required>
       <input type="email" id="from_email" name="from_email" placeholder="Your Email" required>
-      <textarea id="problem" name="problem" placeholder="Describe your problem" required></textarea>
-      <button type="submit">Send</button>
+      <textarea id="problem" name="problem" placeholder="Describe your question or concern..." required></textarea>
+      <button type="submit">Send Message</button>
     </form>
 
     <p id="chatbot-response"></p>
@@ -64,7 +76,15 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 CureConnect | Powered by AI</p>
+    <p>© 2025 CureConnect | Your AI Health Companion</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/amitbaidya/" target="_blank" title="LinkedIn">
+        <img src="images/link.png" alt="LinkedIn" />
+      </a>
+      <a href="#" title="Facebook"><img src="images/face.png" alt="Facebook" /></a>
+      <a href="#" title="Twitter"><img src="images/twit.png" alt="Twitter" /></a>
+      <a href="#" title="Instagram"><img src="images/insta.png" alt="Instagram" /></a>
+    </div>
   </footer>
 
   <!-- Scripts -->
