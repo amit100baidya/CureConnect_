@@ -15,20 +15,17 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css" />
-   
+   <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-S8C5GZZS56"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-S8C5GZZS56');
+  </script>
   <!-- Elfsight AI Chatbot | Untitled AI Chatbot -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 <div class="elfsight-app-cac17422-f3b6-4f9c-a700-2e11653cb885" data-elfsight-app-lazy></div>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CX7J4CM2VN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CX7J4CM2VN');
-</script>
 
 
 </head>
@@ -56,6 +53,9 @@
       <p>Predict possible diseases from your symptoms, connect with trusted doctors, and access expert health insights — all in one intelligent platform.</p>
       <a href="ai_predictor.html" class="btn">🚀 Start Symptom Analysis</a>
     </div>
+    <div class="hero-visual">
+      <img src="images/hero.png" alt="Health & AI Illustration" class="hero-image">
+    </div>
   </section>
 
   <!-- Features Section -->
@@ -63,19 +63,51 @@
     <h2>✨ Why Choose CureConnect?</h2>
     <div class="feature-boxes">
       <div class="box">
-        <img src="images/blog3.png" alt="AI Health" />
+        <img src="images/blog3.png" alt="AI Health" class="feature-image" />
         <h3>🤖 AI Disease Prediction</h3>
         <p>Enter your symptoms and let our advanced artificial intelligence analyze them to suggest possible conditions instantly with accuracy.</p>
       </div>
       <div class="box">
-        <img src="images/doctor1.png" alt="Doctors" />
+        <img src="images/doctor1.png" alt="Doctors" class="feature-image" />
         <h3>👨‍⚕️ Find Expert Doctors</h3>
         <p>Discover and connect with trusted healthcare professionals and specialists verified for their qualifications and patient reviews.</p>
       </div>
       <div class="box">
-        <img src="images/blog1.jpg" alt="Blogs" />
+        <img src="images/blog1.jpg" alt="Blogs" class="feature-image" />
         <h3>📚 Expert Health Blogs</h3>
         <p>Stay informed with verified articles on prevention, fitness, nutrition, and wellness written by medical professionals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video-section">
+    <h2>📹 Learn More About CureConnect</h2>
+    <div class="video-container">
+      <iframe width="100%" height="400" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="video-description">Watch our introductory video to learn how CureConnect can help you manage your health better.</p>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <h2>📊 CureConnect by the Numbers</h2>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3 class="stat-number">50K+</h3>
+        <p>Active Users</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="stat-number">500+</h3>
+        <p>Verified Doctors</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="stat-number">1000+</h3>
+        <p>Health Articles</p>
+      </div>
+      <div class="stat-card">
+        <h3 class="stat-number">98%</h3>
+        <p>User Satisfaction</p>
       </div>
     </div>
   </section>
@@ -83,7 +115,7 @@
   
 
   <!-- Footer -->
-  <footer>
+<footer>
   <div class="contact-options" style="text-align:center; margin-top:20px;">
     <a href="https://www.linkedin.com/company/practo-technologies-pvt-ltd/" target="_blank" class="contact-icon linkedin" title="LinkedIn" style="margin: 0 10px;">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" style="width:30px; height:30px; filter: invert(1);" />
@@ -96,10 +128,14 @@
     </a>
   </div>
 
+  <p style="text-align:center; margin-top:10px; font-size:14px; color:#ccc;">
+    © 2025 CureConnect | All Rights Reserved
+  </p>
+</footer>
+
+
+
   <!-- JS -->
   <script src="js/chatbot.js"></script>
 </body>
 </html>
-
-
-
